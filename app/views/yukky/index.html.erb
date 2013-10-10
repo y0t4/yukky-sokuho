@@ -6,9 +6,10 @@
 その2: 11時には研究室にくる <br>
 その3: 午前に授業のある場合は、授業後に研究室にくる <br>
 その4: アルバイトのある日は15:30まで勉強頑張る</p>
-<form action='index.php' method='post'>
+<form action="<%= yukky_add_path %>" method='post'>
 <textarea name='desc' value='' required>
 </textarea>
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 <input type='submit' value='送信！'>
 </form>
 <table>
