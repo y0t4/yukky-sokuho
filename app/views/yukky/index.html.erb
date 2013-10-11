@@ -17,3 +17,11 @@
 <td>Time</td>
 <td>Desc</td>
 </tr>
+<% if ! @yukky.nil? %>
+  <% @yukky.each do |json| %>
+    <tr>
+      <td><%= json['time'] %></td>
+      <td><%= json['desc'] %></td>
+    </tr>
+  <% end %>
+<% end %>
