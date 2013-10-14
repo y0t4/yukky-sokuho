@@ -26,3 +26,4 @@ doc/
 .idea
 .secret
 vendor/
+config/twitter.conf.rb
