@@ -12,6 +12,9 @@ end
 
 gem 'json'
 
+gem 'tweetstream'
+gem 'em-twitter', '0.3.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
