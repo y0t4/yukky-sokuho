@@ -5,12 +5,14 @@ class YukkyController < ApplicationController
   end
 
   def add
-    now = Time.now.strftime("%Y/%m/%d %H:%M:%S") 
-    @new_data = { 'time' => now, 'desc' => params['desc'] }
+    json = YukkyHelper::JsonManager.new("yukky.json")
+    now = Time.now.strftime("%Y/%m/%d %H:%M:%S")
+    new_data = { 'time' => now, 'desc' => params['desc'] }
 
-    @yukky = YukkyHelper::JsonManager.new("yukky.json")
-    @yukky.add @new_data
-    @yukky.save
+    id = json.get_all.length
+    new_data.store("id", id)
+    json.add new_data
+    json.save
 
     respond_to do |format|
       format.html { redirect_to :action => 'index' }
