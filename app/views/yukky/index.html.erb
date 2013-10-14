@@ -1,27 +1,30 @@
 <title>ユキヒロー速報</title>
 <h1>ユキヒロー速報</h1>
 <p> yukkyをどこかで見つけたら書き込もう！ </p>
-<p> yukkyが決めたこと <br>
+<blockquote> yukkyが決めたこと <br>
 その1: 週に4日は研究室にくる <br>
 その2: 11時には研究室にくる <br>
 その3: 午前に授業のある場合は、授業後に研究室にくる <br>
-その4: アルバイトのある日は15:30まで勉強頑張る</p>
+その4: アルバイトのある日は15:30まで勉強頑張る
+</blockquote>
 <form action="<%= yukky_add_path %>" method='post'>
-<textarea name='desc' value='' required>
+<textarea name='desc' value='' cols='50' required>
 </textarea>
 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
 <input type='submit' value='送信！'>
 </form>
+<hr><hr>
 <table>
 <tr>
-<td>Time</td>
-<td>Desc</td>
+<th>Time</th>
+<th>Desc</th>
 </tr>
 <% if ! @yukky.nil? %>
-  <% @yukky.each do |json| %>
+  <% #wii_pagenate @yukky %>
+  <% @yukky.each do |i| %>
     <tr>
-      <td><%= json['time'] %></td>
-      <td><%= json['desc'] %></td>
+      <td><%= i.time %></td>
+      <td><%= i.desc %></td>
     </tr>
   <% end %>
 <% end %>
