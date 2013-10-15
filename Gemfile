@@ -10,6 +10,8 @@ group :test do
   gem 'capybara'
 end
 
+gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+
 gem 'json'
 
 gem 'tweetstream'
