@@ -1,3 +1,4 @@
-class Yukky < StaticModel::Base
-  set_data_file "#{Rails.root}/tmp/yukky.json"
+class Yukky
+  include Mongoid::Document
+  field :desc, type: String
 end

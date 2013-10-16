@@ -1,3 +1,13 @@
+GIT
+  remote: git://github.com/mongoid/mongoid.git
+  revision: 60a46908c248572c24a062e8a482be13c6d4bff9
+  specs:
+    mongoid (4.0.0)
+      activemodel (~> 4.0.0)
+      moped (~> 2.0.beta3)
+      origin (~> 1.0)
+      tzinfo (~> 0.3.37)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -28,6 +38,7 @@ GEM
     addressable (2.3.5)
     arel (4.0.0)
     atomic (1.1.14)
+    bson (2.0.0.rc3)
     builder (3.1.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -79,10 +90,15 @@ GEM
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (4.7.5)
+    moped (2.0.0.beta3)
+      bson (~> 2.0.0.rc3)
+      optionable (~> 0.1.1)
     multi_json (1.8.1)
     multipart-post (1.2.0)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
+    optionable (0.1.1)
+    origin (1.1.0)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -173,6 +189,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   json
+  mongoid!
   rails (= 4.0.0)
   rake
   rspec-rails
