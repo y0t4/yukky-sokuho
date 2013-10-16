@@ -23,7 +23,7 @@
     <% #wii_pagenate @yukky %>
     <% @yukky.each_with_index do |json,i| %>
       <tr>
-        <td><%= json['time'] %></td>
+        <td><%= json['created_at'] %></td>
         <td class='desc'><%= json['desc'] %></td>
       </tr>
     <% end %>
