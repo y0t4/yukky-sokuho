@@ -10,7 +10,7 @@ class YukkyController < ApplicationController
 
     json = YukkyHelper::JsonManager.new("yukky.json")
     now = Time.now.strftime("%Y/%m/%d %H:%M:%S")
-    new_data = { 'time' => now, 'desc' => params['desc'] }
+    new_data = { 'created_at' => now, 'desc' => params['desc'] }
 
     id = json.get_all.length
     new_data.store("id", id)
@@ -21,7 +21,7 @@ class YukkyController < ApplicationController
     #time = Time.now.strftime("%Y/%m/%d %H:%M:%S")
     #desc = params['desc']
     #tmp.id = 100
-    #tmp.attributes = {:time => time, :desc => desc, :user => "yukky_sokuho" }
+    #tmp.attributes = {:created_at => time, :desc => desc, :user => "yukky_sokuho" }
     #tmp.attributes.save
 
     respond_to do |format|

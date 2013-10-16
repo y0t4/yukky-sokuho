@@ -4,7 +4,10 @@
 $(function() {
   $(".desc").hover(
     function(){
-      $(this).append($("<button>kenkyu</button><button>game</button>"));
+      $(this).append($("<button type='button' value='lab'>kenkyu</button><button type='button' value='game'>game</button>"));
+      $("button").click(function(){
+        alert($(this).closest("tr").attr("id"));
+      });
     },
     function(){
       $(this).find("button").remove();
