@@ -7,12 +7,10 @@
   その3: 午前に授業のある場合は、授業後に研究室にくる <br>
   その4: アルバイトのある日は15:30まで勉強頑張る
 </blockquote>
-<form action="<%= yukky_add_path %>" method='post'>
-  <textarea name='desc' value='' cols='50' required>
-  </textarea>
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <input type='submit' value='送信！'>
-</form>
+<%= form_for(@new_data, :url => { :action => "add" }) do |f| %>
+  <%= f.text_area :desc, :maxlength => "140" %>
+  <%= f.submit("Add") %>
+<% end %>
 <hr><hr>
 <table>
   <tr>
@@ -20,7 +18,6 @@
     <th>Desc</th>
   </tr>
   <% if ! @yukky.nil? %>
-    <% #wii_pagenate @yukky %>
     <% @yukky.each do |json| %>
       <tr id="<%= json['id'] %>">
         <td><%= json['created_at'] %></td>
