@@ -13,7 +13,6 @@ blockquote {
 table {
   //border-collapse: collapse;
   //background-color: #FFFFFF;
-  background-color: red;
 
   border: solid 5px red;
 
@@ -30,6 +29,7 @@ th {
   padding: 0.5em;
 }
 tr {
+  background-color: red;
   filter: alpha(opacity=60);
   -moz-opacity:0.60;
   opacity:0.60;
