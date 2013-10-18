@@ -17,9 +17,7 @@ class YukkyController < ApplicationController
   end
 
   def update
-    update_param = { "label" => params["label"] }
-
-    if @yukky.update(update_param)
+    if @yukky.update(yukky_params)
       respond_to do |format|
         format.json { render :nothing => true }
       end
@@ -32,6 +30,6 @@ class YukkyController < ApplicationController
   end
 
   def yukky_params
-    params.require(:yukky).permit(:desc)
+    params.require(:yukky).permit(:desc,:label)
   end
 end
