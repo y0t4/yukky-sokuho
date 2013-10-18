@@ -18,8 +18,10 @@ class YukkyController < ApplicationController
 
   def update
     if @yukky.update(yukky_params)
+      @entry = {id: params[:id], label: params[:yukky][:label]}
       respond_to do |format|
-        format.json { render :nothing => true }
+      #format.json { render  :text=> params['id'], :text=> params['label'] }
+      format.json { render :json=>  @entry }
       end
     end
   end
