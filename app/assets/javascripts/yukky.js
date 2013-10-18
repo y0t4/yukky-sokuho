@@ -3,19 +3,19 @@
 
 $(function(){
   $(".desc").hover( function(){
-      $(this).children("button").toggle();
-      $("button").click(function(){
-        paramId = $(this).closest("tr").attr("id");
-        paramLabel = $(this).val();
-        postLabel(paramId, paramLabel);
-      });
-    });
+    $(this).children("button").toggle();
+  });
+  $("button").one("click", function(){
+    var paramId = $(this).closest("tr").attr("id");
+    var paramLabel = $(this).val();
+    postLabel(paramId, paramLabel);
+  });
 });
 
 var postLabel = function(dataId, dataLabel){
-  postUrl = "/yukky/update.json";
-  postData = { id: dataId, label: dataLabel, authenticity_token: getCSRFtoken() };
-  returnType = "text";
+  var postUrl = "/yukky/update.json";
+  var postData = { id: dataId, yukky: { label: dataLabel }, authenticity_token: getCSRFtoken() };
+  var returnType = "text";
 
   jQuery.post(postUrl, postData, postLabelCallback, returnType).fail(failFunc);
   return false;
