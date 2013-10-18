@@ -21,7 +21,10 @@
     <% @yukky.each do |json| %>
       <tr id="<%= json['id'] %>">
         <td><%= json['created_at'] %></td>
-        <td class='desc'><%= json['desc'] %></td>
+        <td class='desc'><%= json['desc'] %>
+          <button type='button' value='lab' style="display: none">kenkyu</button>
+          <button type='button' value='game' style="display: none">game</button>
+        </td>
       </tr>
     <% end %>
   <% end %>

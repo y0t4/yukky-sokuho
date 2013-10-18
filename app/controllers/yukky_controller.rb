@@ -1,10 +1,9 @@
 class YukkyController < ApplicationController
+  before_action :set_yukky , only: :update
+
   def index
-    #@yukky = Yukky.paginate(:page => params[:page])
     @new_data = Yukky.new
     @yukky = Yukky.all
-    #json = YukkyHelper::JsonManager.new("yukky.json")
-    #@yukky = json.get_all
   end
 
   def add
@@ -17,7 +16,21 @@ class YukkyController < ApplicationController
     end
   end
 
+  def update
+    update_param = { "label" => params["label"] }
+
+    if @yukky.update(update_param)
+      respond_to do |format|
+        format.json { render :nothing => true }
+      end
+    end
+  end
+
   private
+  def set_yukky
+    @yukky = Yukky.find(params[:id])
+  end
+
   def yukky_params
     params.require(:yukky).permit(:desc)
   end
