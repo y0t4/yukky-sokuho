@@ -1,10 +1,7 @@
 class YukkyController < ApplicationController
   def index
-    #@yukky = Yukky.paginate(:page => params[:page])
     @new_data = Yukky.new
     @yukky = Yukky.all
-    #json = YukkyHelper::JsonManager.new("yukky.json")
-    #@yukky = json.get_all
   end
 
   def add
