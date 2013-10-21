@@ -34,7 +34,7 @@ var postLabelCallback = function(data,status){
 
   switch (data['label']) {
     case "lab":
-      $("#"+data['id']).css({backgroundColor:"yellow"});
+      $("#"+data['id']).css({backgroundColor:"green"});
       break;
     case "game":
       $("#"+data['id']).css({backgroundColor:"red"});
