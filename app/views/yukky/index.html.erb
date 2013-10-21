@@ -19,7 +19,7 @@
   </tr>
   <% if ! @yukky.nil? %>
     <% @yukky.each do |json| %>
-      <tr id="<%= json['id'] %>">
+      <tr id="<%= json['id'] %>" class="<%= json['label'] %>">
         <td><%= json['created_at'] %></td>
         <td class='desc'><%= json['desc'] %>
           <button type='button' value='lab' style="display: none">kenkyu</button>

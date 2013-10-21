@@ -28,7 +28,13 @@ th {
   //border-top-right-radius: 20px;
   padding: 0.5em;
 }
-tr {
+tr.lab {
+  background-color: green;
+  filter: alpha(opacity=60);
+  -moz-opacity:0.60;
+  opacity:0.60;
+}
+tr.game {
   background-color: red;
   filter: alpha(opacity=60);
   -moz-opacity:0.60;
